@@ -1,0 +1,13 @@
+#include "ExternalHandler.h"
+
+ExternalHandler::ExternalHandler() {
+	this->handler = lcdInit(DEVICE);
+}
+
+void ExternalHandler::writeDR(BYTE byte) {
+		lcdWriteDR(this->handler, byte);
+}
+
+void ExternalHandler::writeIR(BYTE byte) {
+	lcdWriteIR(this->handler, byte);
+}

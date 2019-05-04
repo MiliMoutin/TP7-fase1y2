@@ -122,9 +122,13 @@
   <ItemGroup>
     <ClCompile Include="lcd.cpp" />
     <ClCompile Include="mainPrueba.cpp" />
+    <ClCompile Include="ExternalHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ftd2xx.h" />
+    <ClInclude Include="BasicLCD.h" />
+    <ClInclude Include="ExternalHandler.h" />
+    <ClInclude Include="HitachiHD44780.h" />
     <ClInclude Include="LCDUnableToOpenException.h" />
     <ClInclude Include="LCDUnableToWriteException.h" />
     <ClInclude Include="lcd.h" />
