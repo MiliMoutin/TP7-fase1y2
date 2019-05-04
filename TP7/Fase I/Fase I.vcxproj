@@ -121,6 +121,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lcd.cpp" />
+    <ClCompile Include="mainPrueba.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ftd2xx.h" />
