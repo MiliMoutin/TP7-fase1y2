@@ -4,7 +4,8 @@ struct cursorPosition
 {
 	int row;
 	int column;
-};
+};
+
 
 class BasicLCD {
 	public:

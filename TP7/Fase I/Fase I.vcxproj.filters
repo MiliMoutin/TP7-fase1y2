@@ -18,10 +18,10 @@
     <ClCompile Include="lcd.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="mainPrueba.cpp">
+    <ClCompile Include="ExternalHandler.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="ExternalHandler.cpp">
+    <ClCompile Include="HitachiHD44780.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,12 +30,6 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="ftd2xx.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="LCDUnableToWriteException.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="LCDUnableToOpenException.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="BasicLCD.h">

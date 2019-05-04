@@ -55,11 +55,23 @@ using namespace std;
 
 //para obtener el MSB hago un or GET_MSB
 #define GET_MSB 0xF0
-//Instrucciones del LCD#define FUNC_SET_EIGHTBITS 0x03#define FUNC_SET_FOURBITS 0x02#define FUNC_SET_L2_F0 0x08#define LCD_CLEAR 0x01#define DISPLAY_ON 0x0C#define DISPLAY_OFF 0x08#define CURSOR_ON 0x0A#define BLINK_ON 0x09#define DCB_OFF 0x08
+
+//Instrucciones del LCD
+#define FUNC_SET_EIGHTBITS 0x03
+#define FUNC_SET_FOURBITS 0x02
+#define FUNC_SET_L2_F0 0x08
+#define LCD_CLEAR 0x01
+#define DISPLAY_ON 0x0C
+#define DISPLAY_OFF 0x08
+#define CURSOR_ON 0x0A
+#define BLINK_ON 0x09
+#define DCB_OFF 0x08
 
 
 //Escribe un Nibble
-void lcdWriteNibble(FT_HANDLE * deviceHandler, BYTE value);//pasa el dispositivo a mode 4 bitsvoid FourBitMode(FT_HANDLE * deviceHandler);
+void lcdWriteNibble(FT_HANDLE * deviceHandler, BYTE value);
+//pasa el dispositivo a mode 4 bits
+void FourBitMode(FT_HANDLE * deviceHandler);
 //inicializa al Handler
 FT_HANDLE * lcdInit(int iDevice);
 //Escribe un byte al IR

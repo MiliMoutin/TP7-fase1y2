@@ -4,8 +4,11 @@ ExternalHandler::ExternalHandler() {
 	this->handler = lcdInit(DEVICE);
 }
 
+ExternalHandler::~ExternalHandler() {
+	FT_Close(this->handler);
+}
 void ExternalHandler::writeDR(BYTE byte) {
-		lcdWriteDR(this->handler, byte);
+	lcdWriteDR(this->handler, byte);
 }
 
 void ExternalHandler::writeIR(BYTE byte) {

@@ -1,5 +1,7 @@
 #include "lcd.h"
-FT_HANDLE *  lcdInit(int iDevice)
+
+
+FT_HANDLE *  lcdInit(int iDevice)
 {
 	//creo handler  
 	FT_STATUS current_status = FT_OTHER_ERROR;
@@ -7,7 +9,7 @@
 	current_status=FT_Open(iDevice, handler);
 	//si algo salio mal tiro una excepcion
 	if (current_status != FT_OK) {
-		throw LCDUnableToOpenException();
+		throw current_status;
 	}
 	//cambio a modo 4 bits
 	FourBitMode(handler);
@@ -49,7 +51,7 @@ void lcdWriteNibble(FT_HANDLE * deviceHandler, BYTE value) {
 	current_status = FT_Write(deviceHandler, &to_send, dwBytesToWrite_, &dwBytesToWrite_);
 	//Si no se puede escribir tira una excepción 
 	if (current_status != FT_OK) {
-		throw LCDUnableToWriteException();
+		throw current_status;
 	}
 	std::this_thread::sleep_for(std::chrono::milliseconds(STANDART_WAIT_T));
 	//mandamos el enable en cero

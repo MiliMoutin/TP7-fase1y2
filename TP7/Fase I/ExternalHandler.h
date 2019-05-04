@@ -5,6 +5,7 @@
 class ExternalHandler {
 public :
 	ExternalHandler();
+	~ExternalHandler();
 	//escribe en modo instruccion
 	void writeIR(BYTE byte);
 	//escribe en modo datos
