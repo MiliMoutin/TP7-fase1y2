@@ -1,7 +1,10 @@
 #pragma once
-
+#include <iostream>
+#include <Windows.h>
+#ifndef FTD2XX_EXPORTS
+#define FTD2XX_EXPORTS
+#endif
 #include "ftd2xx.h"
-#include <cstdio>
 #include <chrono>
 #include <thread>
 

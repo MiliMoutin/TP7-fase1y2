@@ -6,6 +6,7 @@ ExternalHandler::ExternalHandler() {
 
 ExternalHandler::~ExternalHandler() {
 	FT_Close(*handler);
+	delete handler;
 }
 void ExternalHandler::writeDR(BYTE byte) {
 	lcdWriteDR(this->handler, byte);
