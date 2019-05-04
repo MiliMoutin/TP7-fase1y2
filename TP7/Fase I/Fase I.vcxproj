@@ -125,6 +125,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ftd2xx.h" />
+    <ClInclude Include="LCDUnableToOpenException.h" />
+    <ClInclude Include="LCDUnableToWriteException.h" />
     <ClInclude Include="lcd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

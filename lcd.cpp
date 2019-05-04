@@ -53,7 +53,7 @@ using namespace std;
 
 //para obtener el MSB hago un or GET_MSB
 #define GET_MSB 0xF0
-//Instrucciones del LCD#define FUNC_SET_EIGHTBITS 0x03#define FUNC_SET_FOURBITS 0x02#define FUNC_SET_L2_F0 0x08#define LCD_CLEAR 0x01#define DISPLAY_ON 0x0C#define DISPLAY_OFF 0x08#define CURSOR_ON 0x0A#define BLINK_ON 0x09#define DCB_OFF 0x08#define ENTRY_M_S FT_HANDLE *  lcdInit(int iDevice)
+//Instrucciones del LCD#define FUNC_SET_EIGHTBITS 0x03#define FUNC_SET_FOURBITS 0x02#define FUNC_SET_L2_F0 0x08#define LCD_CLEAR 0x01#define DISPLAY_ON 0x0C#define DISPLAY_OFF 0x08#define CURSOR_ON 0x0A#define BLINK_ON 0x09#define DCB_OFF 0x08#define ENTRY_M_S 0x00void lcdWriteNibble(FT_HANDLE * deviceHandler, BYTE value);void FourBitMode(FT_HANDLE * deviceHandler);FT_HANDLE *  lcdInit(int iDevice);void lcdWriteDR(FT_HANDLE * deviceHandler, BYTE valor);void lcdWriteIR(FT_HANDLE * deviceHandler, BYTE valor);FT_HANDLE *  lcdInit(int iDevice)
 {
 	//creo handler  
 	FT_STATUS current_status = FT_OTHER_ERROR;
@@ -96,7 +96,7 @@ void lcdWriteNibble(FT_HANDLE * deviceHandler, BYTE value) {
 	BYTE to_send = UNSET_ENABLE & value;
 	current_status = FT_Write(deviceHandler, &to_send, dwBytesToWrite_, &dwBytesToWrite_);
 	std::this_thread::sleep_for(std::chrono::milliseconds(STANDART_WAIT_T));
-	//mando el primer nibble
+	//mando el nibble
 	to_send = SET_ENABLE | value;
 	current_status = FT_Write(deviceHandler, &to_send, dwBytesToWrite_, &dwBytesToWrite_);
 	//Si no se puede escribir tira una excepción 

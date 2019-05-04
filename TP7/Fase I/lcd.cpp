@@ -70,10 +70,10 @@ using namespace std;
 void lcdWriteIR(FT_HANDLE * deviceHandler, BYTE valor)
 {	//quiero el nibble mas significativo
 	BYTE write = valor & GET_MSB;
-	lcdWriteByte(deviceHandler, write & UNSET_RS);
+	lcdWriteNibble(deviceHandler, write & UNSET_RS);
 	//ahora quiero el nibble menos significativo
 	write = (valor << 4);
-	lcdWriteByte(deviceHandler, write & UNSET_RS);
+	lcdWriteNibble(deviceHandler, write & UNSET_RS);
 }
 
 //RS en 1, recibe un BYTE y lo manda al lcd en "modo información"
@@ -81,10 +81,10 @@ void lcdWriteDR(FT_HANDLE * deviceHandler, BYTE valor)
 {
 	//quiero el nibble mas significativo
 	BYTE write = valor & GET_MSB;
-	lcdWriteByte(deviceHandler, write | SET_RS);
+	lcdWriteNibble(deviceHandler, write | SET_RS);
 	//ahora quiero el nibble menos significativo
 	write = (valor << 4);
-	lcdWriteByte(deviceHandler, write | SET_RS);
+	lcdWriteNibble(deviceHandler, write | SET_RS);
 }
 
 
