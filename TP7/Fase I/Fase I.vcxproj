@@ -115,6 +115,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="lcd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ftd2xx.h" />
+    <ClInclude Include="lcd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
