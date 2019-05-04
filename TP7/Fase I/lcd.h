@@ -1,8 +1,6 @@
 #pragma once
 
 #include "ftd2xx.h"
-#include "LCDUnableToWriteException.h"
-#include "LCDUnableToOpenException.h"
 #include <cstdio>
 #include <chrono>
 #include <thread>
