@@ -59,9 +59,11 @@ using namespace std;
 	FT_STATUS current_status = FT_OTHER_ERROR;
 	FT_HANDLE * handler;
 	current_status=FT_Open(iDevice, handler);
+	//si algo salio mal tiro una excepcion
 	if (current_status != FT_OK) {
 		throw LCDUnableToOpenException();
 	}
+	//cambio a modo 4 bits
 	FourBitMode(handler);
 	return handler;
 }

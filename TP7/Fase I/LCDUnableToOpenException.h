@@ -1,5 +1,5 @@
 #pragma once
-#pragma once
+
 #include <iostream>
 #include <exception>
 using namespace std;
@@ -10,3 +10,4 @@ public:
 		return "LCD error: unable to Open";
 	}
 };
+
