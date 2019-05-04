@@ -123,6 +123,7 @@
     <ClCompile Include="lcd.cpp" />
     <ClCompile Include="ExternalHandler.cpp" />
     <ClCompile Include="HitachiHD44780.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ftd2xx.h" />
