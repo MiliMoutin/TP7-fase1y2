@@ -18,7 +18,6 @@ public:
 	virtual cursorPosition lcdGetCursorPosition() = 0;
 
 
-	//falta el destructor y los metodos aun
 private: 
 	ExternalHandler * handler;
 	FT_STATUS err;

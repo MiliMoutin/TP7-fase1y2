@@ -37,6 +37,11 @@ FT_STATUS HitachiHD44780::lcdGetError() {
 	return this->err;
 }
 
+//BasicLCD& HitachiHD44780::operator<<(const unsigned char c) {
+
+//}
+
+
 
 
 
