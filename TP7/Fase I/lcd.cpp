@@ -13,6 +13,15 @@ FT_HANDLE *  lcdInit(int iDevice)
 	}
 	//cambio a modo 4 bits
 	FourBitMode(handler);
+	//mas cosas para que todo ande bien
+	lcdWriteIR(handler, FUNC_SET_L2_F0);
+	std::this_thread::sleep_for(std::chrono::milliseconds(1));
+	lcdWriteIR(handler, DISPLAY_OFF);
+	std::this_thread::sleep_for(std::chrono::milliseconds(1));
+	lcdWriteIR(handler, LCD_CLEAR);
+	std::this_thread::sleep_for(std::chrono::milliseconds(10));
+	lcdWriteIR(handler, ENTRY_MODE_SET_UP);
+
 	return handler;
 }
 
@@ -70,13 +79,6 @@ void FourBitMode(FT_HANDLE * deviceHandler) {
 	std::this_thread::sleep_for(std::chrono::milliseconds(1));
 	lcdWriteNibble(deviceHandler, FUNC_SET_FOURBITS);
 	std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	lcdWriteIR(deviceHandler, FUNC_SET_L2_F0);
-	std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	lcdWriteIR(deviceHandler, DISPLAY_OFF);
-	std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	lcdWriteIR(deviceHandler, LCD_CLEAR);
-	std::this_thread::sleep_for(std::chrono::milliseconds(10));
-
-	//faltaria ultima instruccion que no se como es
+	
 }
 

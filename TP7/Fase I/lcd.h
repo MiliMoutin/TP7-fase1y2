@@ -66,6 +66,7 @@ using namespace std;
 #define CURSOR_ON 0x0A
 #define BLINK_ON 0x09
 #define DCB_OFF 0x08
+#define ENTRY_MODE_SET_UP 0x07
 
 
 //Escribe un Nibble
