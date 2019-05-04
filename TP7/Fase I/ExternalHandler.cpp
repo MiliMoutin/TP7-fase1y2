@@ -8,9 +8,9 @@ ExternalHandler::~ExternalHandler() {
 	FT_Close(this->handler);
 }
 void ExternalHandler::writeDR(BYTE byte) {
-	lcdWriteDR(this->handler, byte);
+	lcdWriteDR(&this->handler, byte);
 }
 
 void ExternalHandler::writeIR(BYTE byte) {
-	lcdWriteIR(this->handler, byte);
+	lcdWriteIR(&this->handler, byte);
 }
