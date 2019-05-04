@@ -12,5 +12,5 @@ public :
 	void writeDR(BYTE byte);
 	//falta agregar destructor
 private :
-	FT_HANDLE handler;
+	FT_HANDLE * handler;
 };

@@ -5,24 +5,24 @@ FT_HANDLE * lcdInit(int iDevice)
 {
 	//creo handler  
 	FT_STATUS current_status = FT_OTHER_ERROR;
-	FT_HANDLE * handler;
-	current_status=FT_Open(iDevice, handler);
+	FT_HANDLE  handler;
+	current_status=FT_Open(iDevice, &handler);
 	//si algo salio mal tiro una excepcion
 	if (current_status != FT_OK) {
 		throw current_status;
 	}
 	//cambio a modo 4 bits
-	FourBitMode(handler);
+	FourBitMode(&handler);
 	//mas cosas para que todo ande bien
-	lcdWriteIR(handler, FUNC_SET_L2_F0);
+	lcdWriteIR(&handler, FUNC_SET_L2_F0);
 	std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	lcdWriteIR(handler, DISPLAY_OFF);
+	lcdWriteIR(&handler, DISPLAY_OFF);
 	std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	lcdWriteIR(handler, LCD_CLEAR);
+	lcdWriteIR(&handler, LCD_CLEAR);
 	std::this_thread::sleep_for(std::chrono::milliseconds(10));
-	lcdWriteIR(handler, ENTRY_MODE_SET_UP);
+	lcdWriteIR(&handler, ENTRY_MODE_SET_UP);
 
-	return handler;
+	return &handler;
 }
 
 //RS en 0, recibe un BYTE y lo manda al lcd en "modo instruccion"
