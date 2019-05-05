@@ -21,6 +21,8 @@ public:
 
 
 private: 
+	int cadd;
 	ExternalHandler * handler;
 	FT_STATUS err;
+	void lcdUpdateCursor();
 };
