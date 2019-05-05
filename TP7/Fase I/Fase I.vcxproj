@@ -70,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>C:\Users\User\source\repos\TP7-fase1y2\TP7\Fase I\Adder\i386;C:\Users\User\source\repos\TP7-fase1y2\TP7\Fase I\i386;C:\Users\NACHO\source\repos\MiliMoutin\TP7-fase1y2\TP7\Fase I\i386;C:\Users\NACHO\Descargas\EDA\TP7\CDM v2.12.28 WHQL Certified\i386;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Users\ASUS\Desktop\ITBA\EDA\TP7\FTDI\i386;C:\Users\ASUS\source\repos\TP7-fase1y2\TP7\Fase I\FTDI\i386;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -86,7 +86,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\ASUS\source\repos\TP7-fase1y2\TP7\Fase I\FTDI;C:\Users\User\source\repos\TP7-fase1y2\TP7\Fase I\Adder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ASUS\Desktop\ITBA\EDA\TP7\FTDI;C:\Users\ASUS\source\repos\TP7-fase1y2\TP7\Fase I\FTDI;C:\Users\User\source\repos\TP7-fase1y2\TP7\Fase I\Adder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>ftd2xx.lib;%(AdditionalDependencies)</AdditionalDependencies>
