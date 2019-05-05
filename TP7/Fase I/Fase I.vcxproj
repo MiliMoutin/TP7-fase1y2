@@ -86,7 +86,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\TP7-fase1y2\TP7\Fase I\Adder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ASUS\source\repos\TP7-fase1y2\TP7\Fase I\FTDI;C:\Users\User\source\repos\TP7-fase1y2\TP7\Fase I\Adder;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>ftd2xx.lib;%(AdditionalDependencies)</AdditionalDependencies>

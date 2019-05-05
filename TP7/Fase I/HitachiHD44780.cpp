@@ -69,23 +69,81 @@ BasicLCD& HitachiHD44780::operator<<(const unsigned char * c) {
 
 bool 
 HitachiHD44780::lcdMoveCursorUp()
-{
-	cadd = cadd | CADD_2ND_LAYER;
+{	
+	union adress {
+		int cursor;
+		uint8_t layer : 3;
+
+	};
+	adress actual_add;
+	actual_add.cursor = cadd;
+	if (actual_add.cursor > 0)
+		return false;
+	else
+	{
+		cadd = cadd | CADD_2ND_LAYER;
+		return true;
+	}
 }
 bool 
 HitachiHD44780::lcdMoveCursorDown()
 {
-	cadd = cadd - CADD_2ND_LAYER;
+	union adress {
+		int cursor;
+		uint8_t layer : 3;
+
+	};
+	adress actual_add;
+	actual_add.cursor = cadd;
+	if (actual_add.cursor < 4)
+		return false;
+	else
+	{
+		cadd = cadd - CADD_2ND_LAYER;
+		return true;
+	}	
 }
 bool 
  HitachiHD44780::lcdMoveCursorRight()
 {
-	cadd = cadd + CADD_LAYER_1ST_BIT;
+	union adress {
+		int cursor;
+		struct {
+			uint8_t layer : 3;
+			uint8_t columns : 4;
+		};
+
+	};
+	adress actual_add;
+	actual_add.cursor = cadd;
+	if (actual_add.columns < 16)
+	{
+		cadd = cadd + CADD_LAYER_1ST_BIT;
+		return true;
+	}
+	else
+		return false;
 }
 bool 
 HitachiHD44780::lcdMoveCursorLeft()
 {
-	cadd = cadd - CADD_LAYER_1ST_BIT;
+	union adress {
+		int cursor;
+		struct {
+			uint8_t layer : 3;
+			uint8_t columns : 4;
+		};
+
+	};
+	adress actual_add;
+	actual_add.cursor = cadd;
+	if (actual_add.columns > 0)
+	{
+		cadd = cadd - CADD_LAYER_1ST_BIT;
+		return true;
+	}
+	else
+		return false;
 }
 bool 
 HitachiHD44780::lcdSetCursorPosition(const cursorPosition pos)
@@ -97,11 +155,11 @@ HitachiHD44780::lcdSetCursorPosition(const cursorPosition pos)
 		//Seteo la fila
 		int new_row = 0;
 		new_row = (pos.row << 2);
-		cadd ^ new_row;
+		//cadd ^ new_row;
 		//Seteo la columna
 		int new_col = 0;
 		new_col = (pos.column << 3);
-		cadd ^ new_col;
+		//cadd ^ new_col;
 		return true;
 	}
 }
