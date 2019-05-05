@@ -26,7 +26,7 @@ class BasicLCD {
 		* que se hubiera tomado de forma de evitar
 		* "resources leak".
 		*=====================================================*/
-		~BasicLCD();
+		virtual ~BasicLCD();
 			/*=====================================================
 			* Name: lcdInitOk
 			* Entra: -

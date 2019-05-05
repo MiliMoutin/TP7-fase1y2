@@ -37,10 +37,30 @@ FT_STATUS HitachiHD44780::lcdGetError() {
 	return this->err;
 }
 
-/*BasicLCD& HitachiHD44780::operator<<(const unsigned char c) {
+BasicLCD& HitachiHD44780::operator<<(const unsigned char c) {
+	cadd++;
+	if (cadd == 33) {
+		cadd = 1;
+		//falta hacer el "update real" del cursor pero no entendi la instruccion =)
+	}
+	if (cadd == 18) {
+		//falta hacer el "update real" del cursor pero no entendi la instruccion =)
+	}
+	try {
+		this->handler->writeDR(c);
+	}
+	catch (FT_STATUS e) {
+		this->err = e;
+	}
+	return *this;
+}
 
-}*/
-
+BasicLCD& HitachiHD44780::operator<<(const unsigned char * c) {
+	for (int i = 0; c[i]!=0 ; i++) {
+		*this << c[i];
+	}
+	return *this;
+}
 
 
 

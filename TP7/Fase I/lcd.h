@@ -68,7 +68,7 @@ using namespace std;
 #define BLINK_ON 0x09
 #define DCB_OFF 0x08
 #define ENTRY_MODE_SET_UP 0x07
-
+#define CURSOR_CONTINUE 0x2
 
 //Escribe un Nibble
 void lcdWriteNibble(FT_HANDLE * deviceHandler, BYTE value);

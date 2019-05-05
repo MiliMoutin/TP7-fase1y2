@@ -78,6 +78,5 @@ void FourBitMode(FT_HANDLE * deviceHandler) {
 	std::this_thread::sleep_for(std::chrono::milliseconds(1));
 	lcdWriteNibble(deviceHandler, FUNC_SET_FOURBITS);
 	std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	
 }
 
